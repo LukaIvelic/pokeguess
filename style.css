@@ -197,3 +197,9 @@ th{
     border-radius: 8px;
     display: none;
 }
+
+@media screen and (max-width:600px){
+    aside, section, article{
+        width: 100%;
+    }
+}
