@@ -201,5 +201,6 @@ th{
 @media screen and (max-width:600px){
     aside, section, article{
         width: 100%;
+        height: auto;
     }
 }
