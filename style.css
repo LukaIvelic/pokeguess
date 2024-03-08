@@ -3,17 +3,32 @@
     src: url("pokemon-solid.ttf") format("truetype");
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;    
+    overflow: hidden;
+}
+
 body{
     background-color: rgba(246, 246, 82, 0.289);
 }
 
 #pokedex{
-    height: 98vh;
-    width: 72vw;
+    position: relative;
+    width: 100%;
 }
 
 #pokedexDiv{
-    position: relative;
+    position: absolute;
+    width: 50rem;
+    height: 30rem;
+    left: calc(50% - 25rem);
+    top: calc(50% - 15rem);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,23 +36,18 @@ body{
 
 
 #pokemonImg{
-    height: 37vh;
-    width: 20.3vw;
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    width: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 25vh;
-    left: 21.4vw;
 }
 
 #userinput{
     font-family: consolas, monospace;
-    height: 10vh;
-    width: 22.1vw;
     position: absolute;
-    top: 35.3vh;
-    left: 56.85vw;
     font-size: 4vh;
     background-color: transparent;
     border: none;
@@ -112,8 +122,6 @@ th{
     background-color: transparent;
     border: transparent;
     position: absolute;
-    top: 83.22vh;
-    left: 56.38vw;
     color: rgb(126, 132, 125);
     text-shadow: 0px 0px 1px rgb(161, 164, 174);
     cursor: pointer;
@@ -126,8 +134,6 @@ th{
     background-color: transparent;
     border: transparent;
     position: absolute;
-    top: 83.22vh;
-    left: 71.4vw;
     color: rgb(126, 132, 125);
     text-shadow: 0px 0px 1px rgb(161, 164, 174);
     cursor: pointer;
@@ -137,8 +143,6 @@ th{
     font-family: consolas, monospace;
     font-size: 6.2vh;
     position: absolute;
-    top: 75.8vh;
-    left: 24.2vw;
     color: rgb(70, 74, 70);
 }
 
@@ -148,8 +152,6 @@ th{
     color: rgb(70, 74, 70);
     text-shadow: 0px 0px 1px rgb(161, 164, 174);
     position: absolute;
-    top: 64.9vh;
-    left: 58.45vw;
     letter-spacing: 3.35vw;
 }
 
@@ -158,8 +160,6 @@ th{
     font-weight: bold;
     font-family: consolas, monospace;
     position: absolute;
-    top: 46.5vh;
-    left: 58.2vw;
     letter-spacing: 3.2vw;
     text-shadow: 1px 1px 1px;
 }
@@ -168,6 +168,7 @@ th{
     height: 24vh;
     width: 20vw;
     background-color: rgb(254, 254, 31);
+    background-color: red;
     border: 7px solid rgb(33, 33, 234);
     position: fixed;
     top: 0;
@@ -202,5 +203,196 @@ th{
     aside, section, article{
         width: 100%;
         height: auto;
+    }
+}
+
+/*
+    1. Depending on the width of the window change values given in the media queries; 
+    2. The values are given in rem;
+    3. I copy pasted the same values from media query where min-width: 1400px to every query;
+    4. All that's left for you now is to change the values according to your needs;
+
+    When maching elements to an image mock-up, the best practice I found is to use 
+    absolute position and using fixed values since it's easier to position elements 
+    on the page that way.
+
+    The reason why the previous version scaled poorly is because of the use of percentages.
+    Since the pokedex image is scaled by percentage, changing the width of the window will
+    change the width of the pokedex image. This will cause the elements that are position absolue
+    in the #pokedexDiv elemennt to be positioned differently than intended. Scaling things with
+    percentages and positioning elements with absolute position often doesn't go well together.
+
+    Note: When using media queries to change element values, you have to remove the values assigned
+          to the elements outside the media queries. Otherwise, the values given in the media queries
+          will be overwritten by the values given outside the media queries. 
+*/
+
+@media screen and (min-width: 576px){
+    #pokedex{
+        width: 100%;
+    }
+    #userinput{
+        right: 4rem;
+        top: 9.25rem;
+        width: 15.5rem;
+        height: 5rem;
+    }
+    #previous{
+        right: 12rem;
+        bottom: 0.5rem;
+    }
+    #next{
+        right: 5rem;
+        bottom: 0.5rem;
+    }
+    #timer{
+        left: 7rem;
+        bottom: 0.35rem;
+    }
+    #score{
+        bottom: 5.225rem;
+        right: 10rem;
+    }
+    #p{
+        top: 15.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        letter-spacing: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 767px){
+    #pokedex{
+        width: 100%;
+    }
+    #userinput{
+        right: 4rem;
+        top: 9.25rem;
+        width: 15.5rem;
+        height: 5rem;
+    }
+    #previous{
+        right: 12rem;
+        bottom: 0.5rem;
+    }
+    #next{
+        right: 5rem;
+        bottom: 0.5rem;
+    }
+    #timer{
+        left: 7rem;
+        bottom: 0.35rem;
+    }
+    #score{
+        bottom: 5.225rem;
+        right: 10rem;
+    }
+    #p{
+        top: 15.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        letter-spacing: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    #pokedex{
+        width: 100%;
+    }
+    #userinput{
+        right: 4rem;
+        top: 9.25rem;
+        width: 15.5rem;
+        height: 5rem;
+    }
+    #previous{
+        right: 12rem;
+        bottom: 0.5rem;
+    }
+    #next{
+        right: 5rem;
+        bottom: 0.5rem;
+    }
+    #timer{
+        left: 7rem;
+        bottom: 0.35rem;
+    }
+    #score{
+        bottom: 5.225rem;
+        right: 10rem;
+    }
+    #p{
+        top: 15.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        letter-spacing: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    #pokedex{
+        width: 100%;
+    }
+    #userinput{
+        right: 4rem;
+        top: 9.25rem;
+        width: 15.5rem;
+        height: 5rem;
+    }
+    #previous{
+        right: 12rem;
+        bottom: 0.5rem;
+    }
+    #next{
+        right: 5rem;
+        bottom: 0.5rem;
+    }
+    #timer{
+        left: 7rem;
+        bottom: 0.35rem;
+    }
+    #score{
+        bottom: 5.225rem;
+        right: 10rem;
+    }
+    #p{
+        top: 15.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        letter-spacing: 2.3rem;
+    }
+}
+
+@media  screen and (min-width: 1400px){
+    #pokedex{
+        width: 100%;
+    }
+    #userinput{
+        right: 4rem;
+        top: 9.25rem;
+        width: 15.5rem;
+        height: 5rem;
+    }
+    #previous{
+        right: 12rem;
+        bottom: 0.5rem;
+    }
+    #next{
+        right: 5rem;
+        bottom: 0.5rem;
+    }
+    #timer{
+        left: 7rem;
+        bottom: 0.35rem;
+    }
+    #score{
+        bottom: 5.225rem;
+        right: 10rem;
+    }
+    #p{
+        top: 15.5rem;
+        right: 2rem;
+        font-size: 2rem;
+        letter-spacing: 2.3rem;
     }
 }
