@@ -10,7 +10,7 @@
 
 html, body{
     height: 100%;    
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body{
@@ -168,7 +168,6 @@ th{
     height: 24vh;
     width: 20vw;
     background-color: rgb(254, 254, 31);
-    background-color: red;
     border: 7px solid rgb(33, 33, 234);
     position: fixed;
     top: 0;
@@ -218,7 +217,7 @@ th{
 
     The reason why the previous version scaled poorly is because of the use of percentages.
     Since the pokedex image is scaled by percentage, changing the width of the window will
-    change the width of the pokedex image. This will cause the elements that are position absolue
+    change the width of the pokedex image. This will cause the elements that are positioned absolute
     in the #pokedexDiv elemennt to be positioned differently than intended. Scaling things with
     percentages and positioning elements with absolute position often doesn't go well together.
 
